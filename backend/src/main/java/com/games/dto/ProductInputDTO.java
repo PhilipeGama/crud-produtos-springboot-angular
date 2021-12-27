@@ -1,10 +1,6 @@
 package com.games.dto;
 
-import com.games.entity.Games;
 import com.games.entity.Product;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProductInputDTO {
 

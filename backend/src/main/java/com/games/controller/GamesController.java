@@ -47,7 +47,6 @@ public class GamesController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Games createGames(@RequestBody GamesInputDTO gamesInputDTO){
-        System.out.println("post");
         Games games = gamesInputDTO.toModel();
         return gamesService.saveGames(games);
     }

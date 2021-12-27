@@ -58,4 +58,6 @@ public class GamesInputDTO {
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+
 }

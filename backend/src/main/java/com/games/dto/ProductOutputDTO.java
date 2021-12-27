@@ -1,5 +1,6 @@
 package com.games.dto;
 
+import com.games.entity.Producer;
 import com.games.entity.Product;
 
 import java.util.ArrayList;
@@ -13,19 +14,23 @@ public class ProductOutputDTO {
 
     private float price;
 
+    private Producer producer;
+
     public ProductOutputDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
         this.price = product.getPrice();
+        this.producer = product.getProducer();
     }
 
     public ProductOutputDTO() {
     }
 
-    public ProductOutputDTO(long id, String name, float price) {
+    public ProductOutputDTO(long id, String name, float price, Producer producer) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.producer = producer;
     }
 
 
@@ -61,5 +66,13 @@ public class ProductOutputDTO {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 }

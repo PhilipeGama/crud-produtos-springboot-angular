@@ -1,9 +1,6 @@
 package com.games.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "product")
 public class Product {
@@ -16,14 +13,17 @@ public class Product {
 
     private float price;
 
+    @ManyToOne
+    private Producer producer;
 
     public Product() {
     }
 
-    public Product(long id, String name, float price) {
+    public Product(long id, String name, float price, Producer producer) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.producer = producer;
     }
 
     public long getId() {
@@ -48,5 +48,13 @@ public class Product {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 }

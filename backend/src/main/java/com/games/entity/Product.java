@@ -1,6 +1,9 @@
 package com.games.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity(name = "product")
 public class Product {
@@ -15,6 +18,9 @@ public class Product {
 
     @ManyToOne
     private Producer producer;
+
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    private LocalDate DateManufacture;
 
     public Product() {
     }

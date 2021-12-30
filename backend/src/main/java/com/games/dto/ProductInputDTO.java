@@ -3,6 +3,8 @@ package com.games.dto;
 import com.games.entity.Producer;
 import com.games.entity.Product;
 
+import java.time.LocalDate;
+
 public class ProductInputDTO {
 
 
@@ -11,6 +13,8 @@ public class ProductInputDTO {
     private float price;
 
     private Producer producer;
+
+    private LocalDate dateManufacture;
 
     public ProductInputDTO() {
     }
@@ -25,7 +29,8 @@ public class ProductInputDTO {
         Product product = new Product();
         product.setName(this.name);
         product.setPrice(this.price);
-        product.setProducer(producer);
+        product.setProducer(this.producer);
+        product.setDateManufacture(this.dateManufacture);
         return product;
     }
 
@@ -53,12 +58,21 @@ public class ProductInputDTO {
         this.producer = producer;
     }
 
+    public LocalDate getDateManufacture() {
+        return dateManufacture;
+    }
+
+    public void setDateManufacture(LocalDate dateManufacture) {
+        this.dateManufacture = dateManufacture;
+    }
+
     @Override
     public String toString() {
         return "ProductInputDTO{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", producer=" + producer +
+                ", dateManufacture=" + dateManufacture +
                 '}';
     }
 }

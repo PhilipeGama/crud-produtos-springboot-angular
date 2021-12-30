@@ -19,17 +19,18 @@ public class Product {
     @ManyToOne
     private Producer producer;
 
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    private LocalDate DateManufacture;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateManufacture;
 
     public Product() {
     }
 
-    public Product(long id, String name, float price, Producer producer) {
+    public Product(long id, String name, float price, Producer producer, LocalDate dateManufacture) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.producer = producer;
+        this.dateManufacture = dateManufacture;
     }
 
     public long getId() {
@@ -62,5 +63,13 @@ public class Product {
 
     public void setProducer(Producer producer) {
         this.producer = producer;
+    }
+
+    public LocalDate getDateManufacture() {
+        return dateManufacture;
+    }
+
+    public void setDateManufacture(LocalDate dateManufacture) {
+        this.dateManufacture = dateManufacture;
     }
 }
